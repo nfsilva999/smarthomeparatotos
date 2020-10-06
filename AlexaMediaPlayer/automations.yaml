@@ -1,0 +1,26 @@
+### AUTOMAÇÃO EXEMPLO PARA UTILIZAR O COMPONENTE ALEXA MEDIA PLAYER ###
+#  - VER VIDEO TUTORIAL NO CANAL: https://youtu.be/gw0mOzRDptQ
+
+- id: 'TELEGRAM: Avisar quando a luz da cozinha for ligada'
+  alias: Aviso_Sala_Jantar_Ligado
+  trigger:
+  - platform: state
+    entity_id: light.sala_de_jantar
+    to: 'on'
+  condition: []
+  action:
+  - service: notify.ha_telegram
+    data:
+      title: Luzes ligadas
+      message: Atenção! Luz da sala de Jantar está ligada
+
+  # CHAMADA DE SERVIÇO DO ALEXA MEDIA PLAYER
+  - service: notify.alexa_media
+    data:
+      target:
+      - media_player.alexa_sala
+      - media_player.alexa_cozinha
+      - media_player.alexa_quarto
+      message: "<voice name='Ines'><lang xml:lang='pt-PT'>A luz da sala de jantar está ligada!</lang></voice>"
+      data:
+        type: announce
