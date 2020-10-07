@@ -9,10 +9,6 @@
     to: 'on'
   condition: []
   action:
-  - service: notify.ha_telegram
-    data:
-      title: Luzes ligadas
-      message: Atenção! Luz da sala de Jantar está ligada
 
   # CHAMADA DE SERVIÇO DO ALEXA MEDIA PLAYER
   - service: notify.alexa_media
