@@ -1,0 +1,9 @@
+telegram_bot:
+  - platform: polling
+    api_key: 1279356707:AAFtLPQJIQNyX3GlSQLUmJTZLAZvp9RdH7U
+    allowed_chat_ids:
+      - 986264579
+     
+  - name: ha_telegram
+    platform: telegram
+    chat_id: 986264579
